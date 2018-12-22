@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Rochester');
+/* font-family: 'Rochester', cursive; */
+
+.signup{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.formbox{
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.signup .appDemo{
+    background-image: url(/img/signup.png);
+    height: 700px;
+    width: 700px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.signup .appDemo .appDemoImg{
+    width: 280px;
+    height: 500px;
+    top: 106px;
+    right: 161px;
+    -webkit-transition: all .4s ease-in;
+    transition: all .4s ease-in;
+    position: absolute;
+    border: 1px solid #373636;
+    background-image: url('/img/0.jpg');
+    animation: appDemo 9s ease-in  both infinite;
+}
+
+@keyframes appDemo{
+    0%, 32%{
+        background-image: url('/img/0.jpg')
+    }
+    34%,66%{
+        background-image: url('/img/1.jpg')
+    }
+    68%, 100%{
+        background-image: url('/img/2.jpg')
+    }
+
+}
+
+.formbox form{
+    width: 80%;
+    margin: auto;
+}
+
+form input, form textarea{
+    background-color: #fafafa !important;
+    border-bottom:0px !important;
+    border: 1px solid #efefef !important;
+    border-radius: 4px !important;
+    outline: none;
+    width: -webkit-fill-available !important;
+    margin: 0 auto 8px  !important;
+    padding: 10px !important;
+}
+
+form input:focus{
+    box-shadow: none !important;
+    border-bottom-color:none
+}
+
+form input{
+    height: auto !important;
+}
+
+form button{
+    width: 100%;
+    font-weight: 800;
+}
+
+.formbox form p{
+    color: #999;
+}
+
+.logo{
+    font-family: 'Rochester', cursive;
+    font-size: 3em;
+    margin: 1rem;
+    font-weight: bold;
+    color: #262626
+}
+
+.login{
+    width: 400px;
+    margin: 1in auto;
+}

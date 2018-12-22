@@ -1,0 +1,115 @@
+.topbar{
+    width: 100vw;
+    border-bottom: 1px solid #00000019;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+
+.topbar .container{
+    display: flex;
+    height: 79px;
+    padding: 26px 20px;
+    justify-content: space-between;
+}
+
+.topbar .container div{
+    display: flex;
+    width: auto;
+}
+
+.topbar img{
+    margin-right: 20px;
+}
+
+.topbar .logo{
+    font-size: 150% !important;
+    margin: 0 !important;
+    padding-left: 20px;
+    border-left: 2px solid #000;
+}
+
+.dashboard .card{
+    text-align: left;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 60px;
+}
+
+.dashboard .card .card-title{
+    padding: 10px 20px;
+}
+
+.dashboard .card .divider{
+    margin: 0 10px
+}
+
+.dashboard .card .darkText{
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.dashboard .card input{
+    height: auto;
+    border-bottom: none !important;
+    margin: 0;
+}
+.dashboard .card input:focus{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+.dashboard .card-icons span{
+    height: 40px;
+    width: 40px;
+}
+
+.dashboard .card-icons span i{
+    cursor: pointer;
+}
+
+.dashboard .card .userLogo{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.sidebar .user{
+    background-color: transparent;
+    border: none;
+}
+
+.sidebar{
+    position: relative
+}
+
+.sidebar .card{
+    margin-bottom: 20px
+}
+
+.dashboard input[type=file]{
+    background-color: aquamarine !important;
+    display: none;
+}
+
+.dashboard .fileBtn{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.dashboard .logout{
+    margin-left: 20px;
+    height: 27px !important;
+    line-height: 27px !important;
+    font-size: 13px !important;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+.dashboard .logout:hover{
+    background-color: #000;
+    color: #fff;
+}
