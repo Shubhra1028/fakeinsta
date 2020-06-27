@@ -59,7 +59,7 @@ class Login extends Component {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png" width="100%" alt="apple store"/>
                 </div>
                 <div className="col s6">
-                    <img src="https://www.flexitime.co.nz/wp-content/uploads/2014/07/Googleplay_button.png" width="100%" alt="android app store"/>
+                    <img src="https://workfrom.co/siteadmin/files/2016/09/xgoogle-play-badge-e1477296348377.png.pagespeed.ic.t-eu-HIzmI.png" width="100%" alt="android app store"/>
                 </div>
             </div>
         </div>

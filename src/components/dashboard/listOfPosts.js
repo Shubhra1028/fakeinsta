@@ -13,6 +13,10 @@ import firebase from '../../config/fbconfig'
         }]
     }
 
+    componentDidUpdate(){
+        console.log(this.props.username, this.props.postsF);
+    }
+
     handleChange = (e)=> {
         e.persist()
         const {username} = this.props
@@ -130,7 +134,9 @@ import firebase from '../../config/fbconfig'
                     <div className="card-icons grey-text text-lighten-1">
                         <span onClick={(e)=> (this.handleLikes(e, item))}><i className="material-icons">favorite_border</i></span>
                         <span><i className="material-icons">chat_bubble_outline</i></span>
-                        <span onClick={(e)=> (this.handleDeletes(e, item))}><i className="material-icons right">delete_outline</i></span>
+                        { this.props.username === item.username ?
+                            <span onClick={(e)=> (this.handleDeletes(e, item))}><i className="material-icons right">delete_outline</i></span> : null
+                        }
                     </div>
                     <p className="black-text darkText">{item.likes} likes</p>
                     <p className="grey-text text-lighten-1">{item.desc}</p>
@@ -148,8 +154,8 @@ import firebase from '../../config/fbconfig'
     }
     
     render(){
-        if(this.props.postsF.ordered.posts && this.props.posts){
-            let allPosts = this.props.postsF.ordered.posts.concat(this.props.posts)
+        if(this.props.postsF.ordered.posts){
+            let allPosts = this.props.postsF.ordered.posts
             return (
                 <div className="section">
                     {this.renderPostLists(allPosts)}
@@ -168,9 +174,8 @@ import firebase from '../../config/fbconfig'
 
 const mapStateToProps = (state)=>{
         return{
-            posts: state.posts.posts,
             postsF : state.firestore,
-            username : state.firebase.profile.username
+            username : state.firebase.profile
         }
     
     

@@ -24,16 +24,16 @@ export const createPosts = (post) => {
     }
 }
 
-export const getPosts = ()=>{
-        return (dispatch, getState) =>{
-            axios.get("http://starlord.hackerearth.com/insta").then(response => {
-                dispatch({
-                    type : "GET_POST",
-                    posts : response
-                })
-            }) 
-        }
-}
+// export const getPosts = ()=>{
+//         return (dispatch, getState) =>{
+//             axios.get("http://starlord.hackerearth.com/insta").then(response => {
+//                 dispatch({
+//                     type : "GET_POST",
+//                     posts : response
+//                 })
+//             }) 
+//         }
+// }
 
 export const addPosts = (post)=>{
     return (dispatch) =>{

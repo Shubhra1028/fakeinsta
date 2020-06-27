@@ -37,6 +37,8 @@
 
 .dashboard .card .card-title{
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
 }
 
 .dashboard .card .divider{

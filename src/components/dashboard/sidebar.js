@@ -80,9 +80,23 @@ class Sidebar extends Component{
                             this.state.Image === "" ? null : <textarea id="desc" placeholder="Description..." onChange={this.handleChange} />
                         }
                         {
-                            this.state.desc === "" ? null : <button className="btn blue z-depth-0">Submit</button>
+                            this.state.desc === "" ? null : <button className="btn blue z-depth-0">Post</button>
                         }
                         </form>
+                    </div>
+                    </li>
+                </ul>
+
+                <ul className="card z-depth-0">
+                    <li>
+                    <div className="card-title"><i className="material-icons">notifications</i> Latest Activity</div>
+                    <div className="card-content white" style={{padding:'0px 24px'}} >
+                    <ul class="collection">
+                        <li class="collection-item">Notification</li>
+                        <li class="collection-item">Notification</li>
+                        <li class="collection-item">Notification</li>
+                        <li class="collection-item">Notification</li>
+                    </ul>
                     </div>
                     </li>
                 </ul>

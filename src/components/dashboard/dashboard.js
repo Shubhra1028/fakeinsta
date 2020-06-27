@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './../../styles/dashboard.css'
-import {getPosts} from './../../store/actions/postActions'
+// import {getPosts} from './../../store/actions/postActions'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 
@@ -10,9 +10,9 @@ import Sidebar from './sidebar'
 
 class Dashboard extends Component{
 
-    componentWillMount(){
-        this.props.getPosts()
-    }
+    // componentWillMount(){
+    //     this.props.getPosts()
+    // }
 
     render(){
         const {auth, profile} = this.props
@@ -44,10 +44,10 @@ const mapStateToProps = (state)=>{
     }
 }
 
-const mapDispatchToProps = (dispatch)=>{
-    return{
-        getPosts : ()=> dispatch(getPosts())
-    }
-}
+// const mapDispatchToProps = (dispatch)=>{
+//     return{
+//         getPosts : ()=> dispatch(getPosts())
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+export default connect(mapStateToProps)(Dashboard)
