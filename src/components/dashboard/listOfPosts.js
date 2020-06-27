@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {compose} from 'redux'
-import {firestoreConnect} from 'react-redux-firebase'
 import firebase from '../../config/fbconfig'
 
  class PostDetail extends Component {
@@ -11,10 +9,6 @@ import firebase from '../../config/fbconfig'
             commenter: "",
             commentText: ""
         }]
-    }
-
-    componentDidUpdate(){
-        console.log(this.props.username, this.props.postsF);
     }
 
     handleChange = (e)=> {
@@ -154,8 +148,8 @@ import firebase from '../../config/fbconfig'
     }
     
     render(){
-        if(this.props.postsF.ordered.posts){
-            let allPosts = this.props.postsF.ordered.posts
+        if(this.props.posts){
+            let allPosts = this.props.posts
             return (
                 <div className="section">
                     {this.renderPostLists(allPosts)}
@@ -174,16 +168,16 @@ import firebase from '../../config/fbconfig'
 
 const mapStateToProps = (state)=>{
         return{
-            postsF : state.firestore,
             username : state.firebase.profile
         }
-    
-    
 }
 
-export default compose(
-    connect(mapStateToProps),
-    firestoreConnect([
-      { collection: 'posts', orderBy: ['timestamp', 'desc']}
-    ])
-  )(PostDetail)
+// export default compose(
+//     connect(mapStateToProps),
+//     firestoreConnect([
+//       { collection: 'posts', orderBy: ['timestamp', 'desc']},
+//       { collection: 'notifications', orderBy: ['time', 'desc']},
+//     ])
+//   )(PostDetail)
+
+export default connect(mapStateToProps)(PostDetail);

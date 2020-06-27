@@ -3,6 +3,8 @@ import './../../styles/dashboard.css'
 // import {getPosts} from './../../store/actions/postActions'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
+import {compose} from 'redux'
+import {firestoreConnect} from 'react-redux-firebase'
 
 import Topbar from './topbar';
 import PostDetail from './listOfPosts'
@@ -13,6 +15,7 @@ class Dashboard extends Component{
     // componentWillMount(){
     //     this.props.getPosts()
     // }
+
 
     render(){
         const {auth, profile} = this.props
@@ -25,10 +28,10 @@ class Dashboard extends Component{
                 <Topbar />
                 <div className="row container">
                     <div className="col s12 m8">
-                        <PostDetail posts={this.props.posts}/>
+                        <PostDetail posts={this.props.data.ordered.posts} />
                     </div>
                     <div className="col s12 m4 ">
-                        <Sidebar profile={profile} />
+                        <Sidebar profile={profile} notifications={this.props.data.ordered.notifications} />
                     </div>
                 </div>
             </div>
@@ -38,9 +41,10 @@ class Dashboard extends Component{
 
 const mapStateToProps = (state)=>{
     return{
-        posts: state.posts,
+        // posts: state.posts,
         auth : state.firebase.auth,
-        profile: state.firebase.profile
+        profile: state.firebase.profile,
+        data : state.firestore
     }
 }
 
@@ -50,4 +54,12 @@ const mapStateToProps = (state)=>{
 //     }
 // }
 
-export default connect(mapStateToProps)(Dashboard)
+// export default connect(mapStateToProps)(Dashboard)
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+      { collection: 'notifications', orderBy: ['time', 'desc'], limit:5 },
+      { collection: 'posts', orderBy: ['timestamp', 'desc']}
+    ])
+  )(Dashboard)
