@@ -29,7 +29,7 @@ class SignUp extends Component {
             console.log(this.state)
         }
         else{
-            console.log(this.state)
+            // console.log(this.state)
             this.props.signUp(this.state)
         }
     }

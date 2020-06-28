@@ -65,7 +65,7 @@ class Sidebar extends Component {
           <span className="btn-floating pink z-depth-0 userLogo">
             {item[0] || item[1] ? `${item[0][0]}${item[1] ? item[1][0] : ""}` : "an"}
           </span>
-          <span className="bold">{notification.username} </span> {notification.content} <br/> <span className="light"> {moment(Date(notification.time)).fromNow()} </span>
+          <span className="bold">{notification.username} </span> {notification.content} <br/> <span className="light"> {moment(new Date(notification.time.seconds*1000)).fromNow()} </span>
         </li>
       );
     });

@@ -42,7 +42,11 @@ import firebase from '../../config/fbconfig'
         
     }
 
-    addComment = (docId, comment)=>{
+    addComment = (docId, newComment)=>{
+            const comment = {
+                commentText: newComment.commentText ,
+                commenter: newComment.commenter.username
+            }
             var db = firebase.firestore()
             var batch = db.batch()
             var commentsRef = db.collection("posts").doc(docId)
@@ -98,10 +102,11 @@ import firebase from '../../config/fbconfig'
         }
     }
 
-    showComments =(doc)=>{
+    showComments = (doc)=>{
         if(doc.comments){
             return doc.comments.map((cmt, id)=> {
-                return <p key={id}><strong>{cmt.commenter}</strong> {cmt.commentText}</p>
+                // console.log(cmt)
+                return <p key={id} className="light" ><strong>{cmt.commenter}</strong> {cmt.commentText}</p>
             })
         }
         else{
